@@ -13,8 +13,7 @@ pipeline {
                 }
             }
         }
-        stages {
-                stage("building the docker image...") {
+        stage("building the docker image...") {
                     steps {
                         script {
                             echo "building the application"

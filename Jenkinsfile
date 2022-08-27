@@ -9,15 +9,21 @@ pipeline {
         stage("build jar") {
             steps {
                 script {
+                    gv = load "script.groovy"
+
+    stages {
+        stage("build jar") {
+            steps {
+                script {
                     gv.buildJar()
                 }
             }
         }
         stages {
-                stage("building the docker image...") {
-                    steps {
-                        script {
-                           gv.buildImage()
+            stage("building the docker image...") {
+                steps {
+                    script {
+                        gv.buildImage()
                         }
                     }
                 }

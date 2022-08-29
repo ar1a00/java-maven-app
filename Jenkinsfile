@@ -10,8 +10,10 @@ pipeline {
             steps {
                 script {
                     gv = load "script.groovy"
+                    }
+                }
+            }
 
-    stages {
         stage("build jar") {
             steps {
                 script {
@@ -19,11 +21,10 @@ pipeline {
                 }
             }
         }
-        stages {
-            stage("building the docker image...") {
-                steps {
-                    script {
-                        gv.buildImage()
+        stage("building the docker image...") {
+            steps {
+                script {
+                    gv.buildImage()
                         }
                     }
                 }
@@ -36,4 +37,3 @@ pipeline {
         }
     }
 }
-}}}}}

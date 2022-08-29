@@ -3,7 +3,7 @@ def gv
 pipeline {
     agent any
     tools {
-     maven '3.6'
+    maven '3.6'
     }
     stages {
         stage("build jar") {
